@@ -1,4 +1,4 @@
-.myButton {
+.button {
   background-color: #0276ff;
   border-radius: 5px;
   border-style: none;
@@ -9,12 +9,13 @@
   font-size: 100%;
   margin: 5px 0;
   padding: 10px 21px;
+  min-width: 130px;
 }
 
-.myButton:active {
+.button:active {
   background-color: #006ae8;
 }
 
-.myButton:hover {
+.button:hover {
   background-color: #1c84ff;
 }

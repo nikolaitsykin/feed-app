@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "RM Neue", sans-serif;
 }
 
 #root {
@@ -31,11 +32,14 @@
   box-sizing: border-box;
   font-size: 100%;
   line-height: 1.15;
-  padding: 10px 21px;
+  padding: 10px 15px;
   text-transform: none;
-  font-family: "RM Neue", sans-serif;
   justify-content: space-between;
   align-items: center;
+}
+
+.post__content {
+  margin: 0 5px;
 }
 
 .post__list__header {
@@ -43,9 +47,36 @@
   text-align: center;
 }
 
-.error_msg {
-  font-family: "RM Neue", sans-serif;
-  font-size: 14px;
-  margin: 5px 5px;
+.error {
   color: red;
+  font-size: 11px;
+  margin-left: 10px;
 }
+
+.post-enter {
+  opacity: 0;
+}
+.post-enter-active {
+  transform: translateX(0px);
+  opacity: 1;
+  transition: all 100ms ease-in;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  transform: translateX(-700px);
+  opacity: 0;
+  transition: all 500ms ease-in;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
