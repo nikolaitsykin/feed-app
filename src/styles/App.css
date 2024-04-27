@@ -80,3 +80,22 @@
   margin-top: 10px;
 }
 
+@media screen and (max-width: 450px) {
+  .newPost {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px 0;
+    border: 1px solid #0276ff;
+    border-radius: 5px;
+    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+    box-sizing: border-box;
+    font-size: 100%;
+    line-height: 1.15;
+    padding: 5px 10px;
+    text-transform: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+

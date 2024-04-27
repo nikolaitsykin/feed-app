@@ -15,14 +15,14 @@ function App() {
   const [filter, setFilter] = useState({ sort: "", query: "" });
   const [modal, setModal] = useState(false);
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+
   const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
-    const posts = await PostService();
-    setPosts(posts);
+    const response = await PostService();
+    setPosts(response.data.slice(0, 20));
   });
 
   useEffect(() => {
     fetchPosts();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const createPost = (newPost) => {

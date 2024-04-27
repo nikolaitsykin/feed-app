@@ -25,7 +25,7 @@ const PostForm = ({ create }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validateValues(post);
-    if(Object.keys(validationErrors).length > 0) {
+    if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
     } else {
       const newPost = { ...post, id: Date.now() };
