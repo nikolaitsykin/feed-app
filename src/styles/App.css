@@ -80,6 +80,39 @@
   margin-top: 10px;
 }
 
+.page__wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.page {
+  padding: 10px;
+  margin: 0 1px;
+  border: 1px solid #0276ff;
+  cursor: pointer;
+  background-color: #0276ff;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
+  box-sizing: border-box;
+  color: #fff;
+  min-width: 40px;
+  text-align: center;
+  font-size: 100%;
+}
+
+.page__current {
+  background-color: #0461d2;
+  border: 1px solid #0461d2;
+  font-weight: bold;
+}
+
+.page:hover {
+  background-color: #1c84ff;
+}
+
 @media screen and (max-width: 450px) {
   .newPost {
     display: flex;

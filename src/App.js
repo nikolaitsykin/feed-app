@@ -4,26 +4,46 @@ import PostFilter from "./components/PostFilter";
 import PostForm from "./components/PostForm";
 import PostList from "./components/PostList";
 import Button from "./components/UI/Button/Button";
-import { Loader } from "./components/UI/Loader/Loader";
+import Pagination from "./components/UI/Button/Pagination/Pagination";
+import Loader from "./components/UI/Loader/Loader";
 import Modal from "./components/UI/Modal/Modal";
 import { useFetching } from "./hooks/useFetcing";
+import { usePagination } from "./hooks/usePagination";
 import { usePosts } from "./hooks/usePost";
 import "./styles/App.css";
-
+ 
 function App() {
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: "", query: "" });
   const [modal, setModal] = useState(false);
+
   const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
-  const [fetchPosts, isPostsLoading, postError] = useFetching(async () => {
-    const response = await PostService();
-    setPosts(response.data.slice(0, 20));
-  });
+  const [
+    totalPages,
+    limit,
+    page,
+    pagesArray,
+    getPageCount,
+    getPagesArray,
+    setTotalPages,
+    setPage,
+    setPagesArray,
+  ] = usePagination();
+
+  const [fetchPosts, isPostsLoading, postError] = useFetching(
+    async (limit, page) => {
+      const response = await PostService(limit, page);
+      setPosts(response.data);
+      const totalCount = response.headers["x-total-count"];
+      setTotalPages(getPageCount(totalCount, limit));
+      setPagesArray(getPagesArray(totalPages));
+    }
+  );
 
   useEffect(() => {
-    fetchPosts();
-  }, []);
+    fetchPosts(limit, page);
+  }, [totalPages]);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -32,6 +52,11 @@ function App() {
 
   const removePost = (post) => {
     setPosts(posts.filter((p) => p.id !== post.id));
+  };
+
+  const changePage = (page) => {
+    setPage(page);
+    fetchPosts(limit, page);
   };
 
   return (
@@ -55,6 +80,7 @@ function App() {
           error={postError}
         />
       )}
+      <Pagination page={page} changePage={changePage} pages={pagesArray} />
     </div>
   );
 }

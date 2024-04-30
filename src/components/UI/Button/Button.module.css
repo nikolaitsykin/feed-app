@@ -9,7 +9,7 @@
   font-size: 100%;
   margin: 5px 0;
   padding: 10px 21px;
-  min-width: 130px;
+  /* min-width: 130px; */
 }
 
 .button:active {
