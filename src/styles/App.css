@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   font-family: "RM Neue", sans-serif;
@@ -7,19 +7,13 @@
 
 #root {
   display: flex;
-  justify-content: center;
-}
-.App {
+  flex-direction: column;
+  align-items: center;
   width: 800px;
 }
 
-.post {
-  display: flex;
-  padding: 15px;
-  border: 2px solid teal;
-  margin-top: 15px;
-  justify-content: space-between;
-  align-items: center;
+.App {
+  width: 800px;
 }
 
 .newPost {
@@ -32,14 +26,31 @@
   box-sizing: border-box;
   font-size: 100%;
   line-height: 1.15;
-  padding: 10px 15px;
+  padding: 10px 10px;
   text-transform: none;
   justify-content: space-between;
   align-items: center;
 }
 
+.post {
+  display: flex;
+  padding: 15px;
+  border: 2px solid #0276ff;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post__btns {
+  display: flex;
+}
+
 .post__content {
-  margin: 0 5px;
+  margin: 5px 0 5px 0;
+}
+
+.comment {
+  margin: 5px 0 5px 0;
 }
 
 .post__list__header {
@@ -56,14 +67,17 @@
 .post-enter {
   opacity: 0;
 }
+
 .post-enter-active {
   transform: translateX(0px);
   opacity: 1;
   transition: all 100ms ease-in;
 }
+
 .post-exit {
   opacity: 1;
 }
+
 .post-exit-active {
   transform: translateX(-700px);
   opacity: 0;
@@ -113,22 +127,37 @@
   background-color: #1c84ff;
 }
 
-@media screen and (max-width: 450px) {
-  .newPost {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 5px 0;
-    border: 1px solid #0276ff;
-    border-radius: 5px;
-    box-shadow: rgba(255, 255, 255, 0.26) 0 1px 2px inset;
-    box-sizing: border-box;
-    font-size: 100%;
-    line-height: 1.15;
-    padding: 5px 10px;
-    text-transform: none;
-    justify-content: space-between;
-    align-items: center;
-  }
+.navbar {
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: rgba(95, 93, 93, 0.213) 5px 5px 5px;
 }
 
+.navMenu {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.navLink {
+  padding: 10px;
+  margin: 0 2px;
+  min-width: 90px;
+  font-family: "RM Neue", sans-serif;
+  text-decoration: inherit;
+  border-radius: 5px;
+  background-color: #0276ff;
+  color: white;
+  text-align: center;
+}
+
+.navLink_active {
+  background-color: #0461d2;
+  color: white;
+}
+
+.navLink:hover {
+  background-color: #1c84ff;
+}
