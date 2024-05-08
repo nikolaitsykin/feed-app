@@ -1,5 +1,5 @@
 import axios from "axios";
-import { _POSTS_URL } from "../../utils/constants";
+import { _POSTS_URL } from "../utils/constants";
 
 export const getPost = async (limit, page) => {
   const url = `${_POSTS_URL}?_limit=${limit}&_page=${page}`;

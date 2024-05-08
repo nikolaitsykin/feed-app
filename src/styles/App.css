@@ -45,12 +45,16 @@
   display: flex;
 }
 
+.post__header {
+  margin: 10px 0 5px 0;
+}
+
 .post__content {
   margin: 5px 0 5px 0;
 }
 
 .comment {
-  margin: 5px 0 5px 0;
+  margin: 10px 0 10px 0;
 }
 
 .post__list__header {
@@ -94,6 +98,11 @@
   margin-top: 10px;
 }
 
+.page_header {
+  margin-top: 15px;
+  text-align: center;
+}
+
 .page__wrapper {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -101,7 +110,7 @@
   justify-content: center;
 }
 
-.page {
+.page_btns {
   padding: 10px;
   margin: 0 1px;
   border: 1px solid #0276ff;
@@ -123,15 +132,17 @@
   font-weight: bold;
 }
 
-.page:hover {
+.page_btns:hover {
   background-color: #1c84ff;
 }
 
 .navbar {
-  margin-top: 10px;
+  margin: 10px 0;
   width: 100%;
   border-radius: 5px;
   box-shadow: rgba(95, 93, 93, 0.213) 5px 5px 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navMenu {
@@ -142,9 +153,10 @@
 }
 
 .navLink {
-  padding: 10px;
-  margin: 0 2px;
+  margin: 3px 3px 3px 0;
+  padding: 10px 21px;
   min-width: 90px;
+  height: 38px;
   font-family: "RM Neue", sans-serif;
   text-decoration: inherit;
   border-radius: 5px;
@@ -160,4 +172,11 @@
 
 .navLink:hover {
   background-color: #1c84ff;
+}
+
+.logout_button {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3px 0;
+  border-radius: 5px;
 }

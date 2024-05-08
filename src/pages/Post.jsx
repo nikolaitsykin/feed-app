@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useFetching } from "../../hooks/useFetcing";
 import { getPostById, getPostCommentsById } from "../API/PostService";
-import Loader from "../UI/Loader/Loader";
+import Loader from "../components/UI/Loader/Loader";
+import { useFetching } from "../hooks/useFetcing";
 
 const Post = () => {
   const params = useParams();
@@ -27,7 +27,9 @@ const Post = () => {
 
   return (
     <div>
-      <h1>You have operned ID:{params.id} post page</h1>
+      <h1 className="post__header">
+        You have operned ID:{params.id} post page
+      </h1>
       {isLoading ? (
         <Loader />
       ) : (

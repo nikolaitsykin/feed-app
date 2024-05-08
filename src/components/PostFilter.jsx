@@ -15,7 +15,7 @@ const PostFilter = ({ filter, setFilter }) => {
         onChange={(selectedSort) =>
           setFilter({ ...filter, sort: selectedSort })
         }
-        defaultValue={"Sort"}
+        defaultValue={"Sort..."}
         options={[
           { value: "title", name: "by name" },
           { value: "body", name: "by description" },
