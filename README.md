@@ -10,7 +10,7 @@ Login page
 ![Getting Started](src/images/login_page.png)
 
 The main page with posts feed
-![Main page](src/images/favourites_menu.png)
+![Main page](src/images/main-feed-page.png)
 
 Posts sorting 
 ![Posts sorting](src/images/post_sort.png)
