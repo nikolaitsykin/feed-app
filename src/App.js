@@ -14,12 +14,21 @@ function App() {
       setIsAuth(true);
     }
     setIsLoading(false);
-  }, []);  
+  }, []);
+
+  const user = {
+    id: 1,
+    username: "admin",
+    password: "admin",
+  };
+
+  const saveUser = (user) => {
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+  saveUser(user);
 
   return (
-    <AuthContext.Provider
-      value={{ isAuth, setIsAuth, isLoading, isLoading }}
-    >
+    <AuthContext.Provider value={{ isAuth, setIsAuth, isLoading }}>
       <BrowserRouter>
         <Navbar />
         <AppRouter />
