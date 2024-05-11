@@ -13,16 +13,16 @@ The main page with posts feed
 ![Main page](src/images/favourites_menu.png)
 
 Posts sorting 
-![Unit switch](src/images/post_sortch.png)
+![Posts sorting](src/images/post_sort.png)
 
 Posts creating
-![Mobile ](src/images/add-post.png)
+![Add post](src/images/add-post.png)
 
 Individual post page
-![Mobile favourites](src/images/single_post_page.png)
+![Post page](src/images/single_post_page.png)
 
 Post removing
-![Mobile favourites](src/images/post_delete_animation.png)
+![Post remove](src/images/post_delete_animation.png)
 
 
 
